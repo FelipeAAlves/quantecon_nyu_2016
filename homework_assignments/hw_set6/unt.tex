@@ -1,0 +1,127 @@
+%%% Preamble
+\documentclass[paper=a4, fontsize=11pt, twosided]{article}  %scrartcl
+%---------------------------------------------------------------------------------------------------------------------
+%...................................................... PREAMBLE .....................................................
+%---------------------------------------------------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{fourier}
+
+\usepackage[english]{babel}                                                         % English language/hyphenation
+\usepackage[protrusion=true,expansion=true]{microtype}  
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage[pdftex]{graphicx}   
+\usepackage{url}
+
+%%% Referencing 
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue]{hyperref}
+\usepackage[round]{natbib}
+% \usepackage[style=authoryear]{bibtex}
+
+% %%% Spacing 
+\usepackage{titling}
+\setlength{\droptitle}{-5em}     % Eliminate the default vertical space
+\addtolength{\droptitle}{-20pt}   % Only a guess. Use this for adjustment
+
+% \usepackage[compact]{titlesec}
+% \titlespacing{\paragraph}{pt}{0pt}{0pt}
+
+\usepackage[textwidth = 170mm]{geometry}
+\usepackage{setspace}
+%\singlespacing
+% \onehalfspacing
+% \doublespacing
+\setstretch{1.25}
+\setlength{\parskip}{0.5\baselineskip}
+\setlength\parindent{0pt}
+
+%%% Custom sectioning
+\usepackage{sectsty}
+\allsectionsfont{\centering \normalfont\scshape}
+
+
+%%% Custom headers/footers (fancyhdr package)
+\usepackage{fancyhdr}
+\pagestyle{fancyplain}
+\fancyhead{}                                            % No page header
+\fancyfoot[L]{}                                         % Empty 
+\fancyfoot[C]{}                                         % Empty
+\fancyfoot[R]{\thepage}                                 % Pagenumbering
+\renewcommand{\headrulewidth}{0pt}                      % Remove header underlines
+\renewcommand{\footrulewidth}{0pt}                      % Remove footer underlines
+\setlength{\headheight}{5pt}
+% \setlength{\headheight}{13.6pt}
+
+
+%%% Equation and float numbering
+\numberwithin{equation}{section}        % Equationnumbering: section.eq#
+\numberwithin{figure}{section}          % Figurenumbering: section.fig#
+\numberwithin{table}{section}               % Tablenumbering: section.tab#
+
+%%% Figure
+\usepackage{graphicx,tabu,float,subfig}%,showframe}
+\usepackage[font=small,labelfont=sc,position=top]{caption}
+
+
+%%% Maketitle metadata
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}}     % Horizontal rule
+
+\title{ ddddd \vspace{-5em}}
+% {
+%         \vspace{-0in}  
+%         \usefont{OT1}{bch}{b}{n}
+%         \normalfont \normalsize \ \[5pt]
+%         \horrule{0.5pt} \[0.0cm]
+%         \huge Referee report on ``Learning, Confidence, and Business Cycles''  \[-0.5cm]
+%         \horrule{2pt} \[-0.5cm]
+% }
+% \author{
+%         \normalfont \normalsize Felipe Alves \[-3pt]       \normalsize
+%         \today
+% }
+\date{}
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - --
+%----------- Some cool environments ---------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - --
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+
+\theoremstyle{plain}
+\newtheorem*{equil}{Equilibrium}
+\newtheorem*{stat2}{Stationary Distribution}
+
+% *************************************************************************************************************
+% ************************************************                ********************************************* 
+% *************************************************************************************************************
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+
+\end{abstract}
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+%------------------------------------------------ Question 1 ------------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+\section{Intro}
+ffff
+
+% \section{Lists}
+
+%%% End document
+
+% ============================================================================================================
+%------------------------------------------------ REFERENCE ------------------------------------------------
+% ============================================================================================================
+\clearpage
+\newpage
+%%%%% MAC
+% \bibliographystyle{/Users/Felipe/Dropbox/Bibfolder/plainnat2}
+% \bibliography{/Users/Felipe/Dropbox/Bibfolder/sample2}
+%%%%% PC
+\bibliographystyle{C:/Users/falves/Dropbox/Bibfolder/plainnat2}
+% \bibliography{C:/Users/falves/Dropbox/Bibfolder/}
+
+\end{document}  

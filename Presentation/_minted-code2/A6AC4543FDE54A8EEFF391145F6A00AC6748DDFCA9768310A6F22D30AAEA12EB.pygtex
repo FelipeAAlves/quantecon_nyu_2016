@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{numpy} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{np}
+\PYGdefault{k+kn}{import} \PYGdefault{n+nn}{pylab} \PYGdefault{k+kn}{as} \PYGdefault{n+nn}{pl}
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{f\PYGdefaultZus{}x}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{):}
+  \PYGdefault{k}{return} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{exp}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{)}\PYGdefault{o}{+}\PYGdefault{n}{x}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{5}\PYGdefault{o}{*}\PYGdefault{n}{x}
+
+\PYGdefault{k}{def} \PYGdefault{n+nf}{approx\PYGdefaultZus{}f}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{):}
+  \PYGdefault{k}{return} \PYGdefault{l+m+mi}{1} \PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{4}\PYGdefault{o}{*}\PYGdefault{n}{x} \PYGdefault{o}{+}\PYGdefault{l+m+mf}{3.}\PYGdefault{o}{/}\PYGdefault{l+m+mi}{2}\PYGdefault{o}{*}\PYGdefault{n}{x}\PYGdefault{o}{**}\PYGdefault{l+m+mi}{2}
+
+\PYGdefault{n}{xvals} \PYGdefault{o}{=} \PYGdefault{n}{np}\PYGdefault{o}{.}\PYGdefault{n}{arange}\PYGdefault{p}{(}\PYGdefault{o}{\PYGdefaultZhy{}}\PYGdefault{l+m+mi}{4}\PYGdefault{p}{,}\PYGdefault{l+m+mi}{4}\PYGdefault{p}{,}\PYGdefault{l+m+mf}{0.1}\PYGdefault{p}{)}
+\PYGdefault{n}{fx\PYGdefaultZus{}vals} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{n}{f\PYGdefaultZus{}x}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{)} \PYGdefault{k}{for} \PYGdefault{n}{x} \PYGdefault{o+ow}{in} \PYGdefault{n}{xvals}\PYGdefault{p}{]}
+\PYGdefault{n}{approx\PYGdefaultZus{}vals} \PYGdefault{o}{=} \PYGdefault{p}{[}\PYGdefault{n}{approx\PYGdefaultZus{}f}\PYGdefault{p}{(}\PYGdefault{n}{x}\PYGdefault{p}{)} \PYGdefault{k}{for} \PYGdefault{n}{x} \PYGdefault{o+ow}{in} \PYGdefault{n}{xvals}\PYGdefault{p}{]}
+
+\PYGdefault{n}{pl}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{xvals}\PYGdefault{p}{,}\PYGdefault{n}{fx\PYGdefaultZus{}vals}\PYGdefault{p}{)}
+\PYGdefault{n}{pl}\PYGdefault{o}{.}\PYGdefault{n}{plot}\PYGdefault{p}{(}\PYGdefault{n}{xvals}\PYGdefault{p}{,}\PYGdefault{n}{approx\PYGdefaultZus{}vals}\PYGdefault{p}{)}
+
+\PYGdefault{n}{pl}\PYGdefault{o}{.}\PYGdefault{n}{show}\PYGdefault{p}{()}
+\end{Verbatim}

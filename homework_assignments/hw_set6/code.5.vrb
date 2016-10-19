@@ -1,0 +1,18 @@
+\frametitle{Frame 2}
+\framesubtitle{Horizontal block, text (list) animations, footnotes, hyperlinks}
+
+\begin{block}{This block extends horizontally}
+Be sure to put
+
+\begin{verbatim}
+#+PROPERTY: session *julia*
+\end{verbatim}
+
+at the top of the org file to ensure \texttt{julia} code block session evalation by default.
+\end{block}
+\begin{itemize}[<+->]
+\item Enter Column View\footnote{See \href{http://thread.gmane.org/gmane.emacs.orgmode/5107/focus=5134}{this message} on Gmane for more about Column View.} with \texttt{C-c C-x C-c} on headline
+\item Might like \texttt{S-TAB} to collapse headlines first
+\item Handy for editing headline properties
+\item Set \texttt{ignoreheading} with \texttt{C-c C-b i} on headline
+\end{itemize}

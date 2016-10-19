@@ -1,0 +1,226 @@
+\documentclass[11pt,twoside,fleqn,reqno,a4paper]{amsart}
+
+%---------------------------------------------------------------------------------------------------------------------
+%...................................................... PREAMBLE .....................................................
+%---------------------------------------------------------------------------------------------------------------------
+\usepackage{natbib,amsmath,amsfonts,fullpage,hyphenat,booktabs,enumerate,graphicx,float,subfig} 
+\usepackage[colorlinks,linkcolor=black,citecolor=blue,urlcolor=black]{hyperref} 
+
+\usepackage{float,mathpazo,enumerate,tikz,pdfpages}
+\usepackage[latin1]{inputenc}
+\makeatletter
+\def\subsection{\@startsection{subsection}{3}%
+  \z@{.5\linespacing\@plus.7\linespacing}{.1\linespacing}%
+  {\normalfont\itshape}}
+%Set author not to be UPPERCASE  
+\def\@setauthors{%
+  \begingroup
+  \def\thanks{\protect\thanks@warning}%
+  \trivlist
+  \centering\normalsize \@topsep30\p@\relax
+  \advance\@topsep by -\baselineskip
+  \item\relax
+  \author@andify\authors
+  \def\\{\protect\linebreak}%
+%  \MakeUppercase{\authors}%
+  \authors%
+  \ifx\@empty\contribs
+  \else
+    ,\penalty-3 \space \@setcontribs
+    \@closetoccontribs
+  \fi
+  \endtrivlist
+  \endgroup
+}
+\makeatother
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- 
+%--------------- Line Spec -------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- 
+\usepackage[textwidth = 160mm, textheight = 220mm]{geometry}
+% \usepackage{geometry}
+\usepackage{setspace}
+\setstretch{1.25}
+\setlength{\parskip}{0.5\baselineskip}
+\setlength\parindent{0pt}
+
+\setlength{\voffset}{-0.50in}
+\setlength{\headsep}{25pt}
+\linespread{1.5}
+
+\usepackage{titling}
+\setlength{\droptitle}{-5em}     % Eliminate the default vertical space
+\addtolength{\droptitle}{-20pt} 
+
+\numberwithin{equation}{section}
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
+%---------------------------------- Cabeçalho ----------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead[\sc Class]{}
+\chead[]{\sc NYU Stern}
+\rhead[\emph{Felipe Alves}]{}
+
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
+%---------------------------------- MaTH ----------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
+
+\DeclareMathOperator*{\Max}{Max}
+\DeclareMathOperator*{\Min}{Min}
+\DeclareMathOperator*{\argmax}{argmax}
+
+\newcommand{\matr}[1]{\mathbf{#1}} % undergraduate algebra version
+%\newcommand{\matr}[1]{#1}          % pure math version
+%\newcommand{\matr}[1]{\bm{#1}}     % ISO complying version
+\newcommand*{\defeq}{\mathrel{\vcenter{\baselineskip0.5ex \lineskiplimit0pt
+                     \hbox{\scriptsize.}\hbox{\scriptsize.}}}%
+                     =}
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
+%---------------------------------- Figure ----------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -
+\usepackage{graphicx}%,showframe}
+\usepackage{float}
+\usepackage[]{subfig}
+\usepackage[font=small,labelfont=sc,position=top]{caption}
+
+\author{Felipe Alves \ (NYU Stern)}
+\title{\normalfont\bf Stachuski \\ Problem Set 6 }
+\date{}
+
+%\begin{document} 
+%\maketitle{} \begin{abstract} \end{abstract} 
+\begin{document}
+\maketitle
+%========================================================================
+%------------------------------------ Setup -------------------------------------------
+%========================================================================
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+%------------------------------------------------ Question 1 ------------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+\section*{Exercise 1}
+\setcounter{section}{3}
+\begin{em}
+Show that $\matr{X}'\matr{X}$ is invertible.
+\end{em}
+
+%========================================================================
+\textbf{Answer}:
+%========================================================================
+
+Let $0 \ne \alpha \in \mathbb{R}^k$. Then
+\begin{align*}
+\alpha' ( X'X ) \alpha & = ( X\alpha )' ( X \alpha ) \\
+                       & = \left( \sum_{j=1}^k \alpha_j x_j \right)'   \underbrace{\left( \sum_{j=1}^k \alpha_j x_j \right)}_{z} \\
+                       & = \sum_{i=1}^n z_i^2 \ge 0                 
+\end{align*}
+where $x_j$ is the $j$-th column of matrix $X$. 
+But since $\{x_1,\ldots, x_k\}$ is LI, $ z $ as a linear combination of columns of $X$ is nonzero  
+and therefore we have inequality holding strictly. 
+This implies that $ X'X $ is \emph{positive definite}. 
+
+Hence, all eigenvalues of $ ( X'X ) $ are positive. 
+To see this, let $ \lambda_j,z_j $ be an eigenvalue, eigenvector pair of $ ( X'X ) $. Then
+\[ 
+    \lambda_j z_j = ( X'X )z_j \Rightarrow \lambda_j z_j'z_j = z_j' ( X'X ) z_j >0
+\]
+but $\lambda_j \lVert z \rVert^2>0 \Leftrightarrow \lambda_j >0$. 
+Taking as given the result regarding the relaton of determinant of a matrix and its eigenvalues - $ \text{det} A = \Pi_{j=1}^k \lambda_j $ - 
+we get that determinant of $ X'X $ is positive, therefore invertible.
+
+\vfill \
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+%------------------------------------------------ Question 2 ------------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+\section*{Exercise 2}
+\setcounter{section}{3}
+\begin{em}
+Let $ \matr{P} = \matr{X} ( \matr{X}' \matr{X})^{-1} \matr{X}' $. Show that if $k=n$, then $ \matr{P} $
+is the identity.
+\end{em}
+
+%========================================================================
+\textbf{Answer}:
+%========================================================================
+
+If $ k=n $, then $X$ is square and, because we assumed that it has LI columns, is invertible. 
+Since $X$ invertible implies $ X'$ invertible%
+\footnote{The fact that $X$ is investible mean that exists $X^{-1}$ such that $XX^{-1} = X^{-1} X = I $
+but in that case $( X^{-1} )' X' = X' ( X^{-1} )' =I \Rightarrow ( X^{-1} )' = ( X' )^{-1}$}
+%
+we have
+\[ 
+    P = X( X'X )^{-1} X' = XX^{-1} ( X' )^{-1}X' = I
+\]
+The result is also intuitive. From the orthogonal projection theorem we know that $ Py $ is the vector in span$X$ which best
+approximates $y$. Here, span$X=\mathbb{R}^n$, so $Py = y \ \forall y\in\mathbb{R}^n $, which implies $P=I$
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+%------------------------------------------------ Question 1 ------------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+\section*{Exercise 3}
+\setcounter{section}{3}
+\begin{em}
+Show that the projection of $ \matr{y} \in \mathbb{R}^n $ onto span$\{1\}$ is the mean of elements of $y$.
+\end{em}
+
+%========================================================================
+\textbf{Answer}:
+%========================================================================
+
+Let $S= \text{span } \{ \mathbf{1} \}$. From the lecture notes, we have that $ \text{proj } S$ can be represented
+in a matrix form as $\matr{P} = \mathbf{1} (\mathbf{1}'\mathbf{1})^{-1} \mathbf{1}' $. Therefore the projection 
+of $y \in \mathbb{R}^n$ onto $S$ is given by
+\begin{align*}
+\matr{P} y  & = \mathbf{1} (\mathbf{1}'\mathbf{1})^{-1} \mathbf{1}'y \\
+            & = \mathbf{1} (n)^{-1} \sum_{i=1}^n y_i \\
+            & = \begin{bmatrix}
+                n^{1} \sum_{i=1}^n y_i \\ \vdots \\ n^{1} \sum_{i=1}^n y_i
+                \end{bmatrix}  
+\end{align*}
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+%------------------------------------------------ Question 1 ------------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+\section*{Exercise 4}
+\setcounter{section}{3}
+\begin{em}
+Let $ y\in \mathbb{R}^n $ and $ \matr{X} \in \mathcal{M}(n\times k) $ have linearly independent columns. Let
+$S = \text{span } \{x_1, \ldots, x_k\}$, $ \matr{P} = \text{proj } S$ and $ \matr{M} = \matr{I} - \matr{P} $. 
+Show that if $ x_1 = \mathbf{1} $, then elements of $\hat{u} = \matr{M}y$ sum to zero.
+\end{em} 
+
+%========================================================================
+\textbf{Answer}: \\
+%========================================================================
+By definition of $ \matr{M} $, we can rewrite $ \hat{u} = y - \matr{P}y$. From the \textbf{Orthogonal Projection
+Theorem} we have $ y - \matr{P}y \bot S$. In particular, $\hat{u}$ must be orthogonal to $ \mathbf{1}$, since $\mathbf{1}\in S$. 
+Therefore, the result follows from the realization of $\sum_{i=1}^n \hat{u}_i = \langle \mathbf{1}, \hat{u} \rangle = 0$.
+
+
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+%------------------------------------------------ Question 1 ------------------------------------------------
+%- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - - -- - 
+\section*{Exercise 5}
+\setcounter{section}{3}
+\begin{em}
+Show that if $S$ is a nonempty subset of $\mathbb{R}^n$, then $ S\cap S^{\bot} = \{0\}$.
+\end{em}
+
+%========================================================================
+\textbf{Answer}:
+%========================================================================
+
+The following is true
+\[  
+    x\in S\cap S^{\bot} \Rightarrow \langle x,x \rangle = \lVert x\rVert^2 = 0 \Leftrightarrow x = 0  
+\] 
+where the last inequality follows from the properties of the norm induced by $ \langle \cdot,\cdot \rangle $.
+
+However, from the asusmption on the statement only, we cannot be sure that $S\cap S^{\bot} \ne \emptyset$ - we would if $ S$
+was assumed to be a linear subspace. So, we either have $ S\cap S^{\bot} = \emptyset $ if $ 0 \not\in S $
+or the derised result if we add the assumption $0\in S$.
+
+\bibliographystyle{apalike} \bibliography{all}{} \end{document}

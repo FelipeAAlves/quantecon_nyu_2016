@@ -1,5 +1,7 @@
 global a b epsilon;
-a = 1;
+
+% Demand/Supply parameters
+a = 2;
 b = 0.1;
 epsilon = 1;
 
@@ -12,27 +14,25 @@ phigh = 10.0;
 niter = mxiter;
 
 for i = 1:mxiter;
+    pcur = (plow + phigh)/2;
 
-  pcur = (plow + phigh)/2;
+    yd = demand(pcur);
+    ys = supply(pcur);
 
-  yd = demand(pcur);
-  ys = supply(pcur);
+    excesssupply = ys - yd;
 
-  excesssupply = ys - yd;
+    if (excesssupply > 0); 
+        phigh = pcur;
+    else;
+        plow = pcur;
+    end;
 
-  if (excesssupply > 0); 
-     phigh = pcur;
-  else;
-     plow = pcur;
-  end;
+    diff = abs(phigh - plow);
 
-  diff = abs(phigh - plow);
-
-  if (diff <= toler);
-     niter = i;
-     break;
-   end;
-
+    if (diff <= toler);
+        niter = i;
+        break;
+    end;
 end;
 
 pclear = (plow + phigh)/2;
@@ -40,4 +40,6 @@ yd = demand(pcur);
 ys = supply(pcur);
 excesssupply = ys - yd;
 
-[niter pclear yd ys excesssupply]
+% iter  p*     qᴰ qˢ 
+disp('     iter       p*       qd       qs       eq')
+disp([niter pclear yd ys excesssupply])

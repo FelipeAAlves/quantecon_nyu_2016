@@ -1,0 +1,38 @@
+\frametitle{Frame 3}
+\framesubtitle{Images and captions, font tweaks for source code}
+
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{block}{The \texttt{julia} code}
+
+\footnotesize
+
+\begin{verbatim}
+using Winston
+x = linspace(0, 3pi, 100)
+c = cos(x)
+s = sin(x)
+p = FramedPlot();
+setattr(p, "title", "title!")
+setattr(p, "xlabel", L"\Sigma x^2_i")
+setattr(p, "ylabel", L"\Theta_i")
+add(p, FillBetween(x, c, x, s) )
+add(p, Curve(x, c, "color", "red") )
+add(p, Curve(x, s, "color", "blue") )
+file(p, "example1.pdf")
+\end{verbatim}
+
+\normalsize
+\end{block}
+\end{column}
+\begin{column}{0.4\textwidth}
+\begin{block}{The image}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=.9\linewidth]{example1.pdf}
+\caption{A \texttt{julia} graph}
+\end{figure}
+\end{block}
+\end{column}
+\end{columns}

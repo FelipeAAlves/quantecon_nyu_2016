@@ -1,0 +1,22 @@
+\frametitle{}
+For this to successfully export to PDF you'll need
+
+\begin{verbatim}
+(require 'ox-beamer)
+\end{verbatim}
+
+and you'll need a Beamer entry similar to this
+
+\begin{verbatim}
+(add-to-list 'org-latex-classes
+         '("beamer"
+        "\\documentclass[presentation]{beamer}
+        \[DEFAULT-PACKAGES]
+        \[PACKAGES]
+        \[EXTRA]"
+           ("\\section{%s}" . "\\section*{%s}")
+           ("\\subsection{%s}" . "\\subsection*{%s}")
+           ("\\subsubsection{%s}" . "\\subsubsection*{%s}")))
+\end{verbatim}
+
+in your \texttt{.emacs}. Then open the org file and do: \texttt{C-c C-e l P}.

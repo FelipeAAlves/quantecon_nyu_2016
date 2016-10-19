@@ -1,0 +1,20 @@
+\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
+\PYGdefault{k}{type}\PYGdefault{n+nc}{ TwoAssetsProb}
+\PYGdefault{o}{\PYGdefaultZdl{}}\PYGdefaultZbs{}\PYGdefault{n}{gamma}\PYGdefault{o}{\PYGdefaultZdl{}}\PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}      \PYGdefault{c}{\PYGdefaultZsh{} CRRA utility with parameter gamma}
+\PYGdefault{n}{rho}  \PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}      \PYGdefault{c}{\PYGdefaultZsh{} discount rate}
+\PYGdefault{n}{xi}   \PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}      \PYGdefault{c}{\PYGdefaultZsh{} automatic deposit on illiquid asset}
+\PYGdefault{n}{sigma}\PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}
+\PYGdefault{n}{psi}  \PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}
+
+\PYGdefault{n}{rᴬ}   \PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}    \PYGdefault{c}{\PYGdefaultZsh{} ret on illiquid asset}
+\PYGdefault{n}{rᴮ}   \PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}    \PYGdefault{c}{\PYGdefaultZsh{} ret on liq asset}
+\PYGdefault{n}{wedge}\PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}
+\PYGdefault{n}{w}    \PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}    \PYGdefault{c}{\PYGdefaultZsh{} wage rate}
+
+\PYGdefault{n}{tau}\PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}
+\PYGdefault{n}{T}\PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}
+
+\PYGdefault{n}{chi0}\PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}     \PYGdefault{c}{\PYGdefaultZsh{} parameters on adjustment cost}
+\PYGdefault{n}{chi1}\PYGdefault{p}{::}\PYGdefault{k+kt}{Float64}
+\PYGdefault{k}{end}
+\end{Verbatim}

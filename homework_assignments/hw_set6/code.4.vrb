@@ -1,0 +1,31 @@
+\frametitle{Frame 1}
+\framesubtitle{Two blocks with a pause in between, noweb reference}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{block}{Here is some \texttt{julia} code}
+
+\label{simple-code}
+\begin{verbatim}
+2+3
+print("hello, there!")
+sqrt(5)
+\end{verbatim}
+
+\pause
+\end{block}
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{block}{Here is the output}
+
+\begin{verbatim}
+
+
+5
+hello, there!
+2.23606797749979
+\end{verbatim}
+\end{block}
+\end{column}
+\end{columns}
+\note{This is a beamer note
+This subtree will not appear in the PDF. Notice the noweb call \texttt{<<simple-code>>} which is replaced by the named \texttt{simple-code} src block above (so we don't have to type the same code twice).  It is activated by the \texttt{:noweb yes} header argument. You will notice those headline tags, such as \texttt{:BMCOl:B\_block:} and \texttt{:B\_note:}.  Don't fret about those; they are just a visual aid.}
